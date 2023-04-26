@@ -5,13 +5,17 @@ import javax.swing.JLabel;
 
  
 public class Vista extends javax.swing.JFrame {
+   
     
-    boolean estado=true;
+    //declaracion de variables
+    
+    boolean estado=true;//para poder escribir 
     int puntajex=0,puntajeo=0;
     
     String siguientejuego="O"; 
     String turno="X";
     JLabel lbs[]=new JLabel[9];
+    //creacion de la matriz del triqui y las posibles veces que puede ganar
     int victoria [][]={
         {1,2,3},
         {4,5,6},
@@ -23,9 +27,10 @@ public class Vista extends javax.swing.JFrame {
         {3,5,7}
             
     };
+    //convertir los jLabel a nombre lbs
     public Vista() {
         initComponents();
-        this.setLocationRelativeTo(null);
+        this.setLocationRelativeTo(null);// centrar la ventana 
         lbs[0]=jLabel1;
         lbs[1]=jLabel2;
         lbs[2]=jLabel3;
@@ -38,7 +43,7 @@ public class Vista extends javax.swing.JFrame {
         
     }
 
-    
+    //botones y jlabels
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -60,6 +65,7 @@ public class Vista extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         lbpuntajex = new javax.swing.JLabel();
         lbpuntajeo = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Triqui");
@@ -227,6 +233,13 @@ public class Vista extends javax.swing.JFrame {
         lbpuntajeo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lbpuntajeo.setText("0");
 
+        jButton2.setText("presentacion ");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -252,7 +265,10 @@ public class Vista extends javax.swing.JFrame {
                                 .addGap(33, 33, 33))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 28, Short.MAX_VALUE)))))
+                                .addGap(0, 28, Short.MAX_VALUE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton2)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -270,7 +286,9 @@ public class Vista extends javax.swing.JFrame {
                     .addComponent(lbpuntajex, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbpuntajeo, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addComponent(jButton2)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -294,7 +312,7 @@ public class Vista extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MousePressed
-        presionar(1);
+        presionar(1);//funcion
     }//GEN-LAST:event_jLabel1MousePressed
 
     private void jLabel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MousePressed
@@ -330,11 +348,12 @@ public class Vista extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel9MousePressed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       //para pintar de nuevo a blanco y que quede de nuevo vacio
         for(int i=0;i<lbs.length ;i++){
             lbs[i].setText("");
             lbs[i].setBackground(Color.white);
         }
-        
+        //analiza el turno de la persona siguiente al reiniciar
         turno=siguientejuego;
         if(siguientejuego.equals("O")){
             siguientejuego="X";
@@ -347,6 +366,12 @@ public class Vista extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+     presentacion newframe =new presentacion();
+                newframe.setVisible(true);
+                this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+// creacion de la funcion presionar  y verificar si ay ganador cambiar el turno y que no alla escrito algo en un cuadro
     public void presionar(int casilla){
         if(lbs[casilla-1].getText().equals("")&& estado){
              lbs[casilla-1].setText(turno);
@@ -355,6 +380,7 @@ public class Vista extends javax.swing.JFrame {
         }
         
     }
+    //la funcion para cambiar el turno
     public void cambiarturno(){
         if(turno.equals("X")){
             turno="O";
@@ -365,6 +391,7 @@ public class Vista extends javax.swing.JFrame {
         }
         lbturno.setText("Turno de "+ turno );
     }
+    //para comprobar el ganador se le resta 1 para que embieze desde la posicion 0 y pinta cuando se hace triqui
     public void comprobarganador(){
         for(int i=0;i<victoria.length;i++){
             if(lbs[victoria[i][0]-1].getText().equals("X")&&
@@ -374,9 +401,10 @@ public class Vista extends javax.swing.JFrame {
                 lbs[victoria[i][1]-1].setBackground(Color.green);
                 lbs[victoria[i][2]-1].setBackground(Color.green);
                 lbturno.setText("Ha ganado X");
-                lbpuntajex.setText(Integer.toString(Integer.parseInt(lbpuntajex.getText())+1));
+                lbpuntajex.setText(Integer.toString(Integer.parseInt(lbpuntajex.getText())+1));// incrementar el puntaje
                 estado=false;
                 puntajex++;
+                //para arrojar las preguntas 
                 if (puntajex>=3){
                 pregunta1 newframe =new pregunta1();
                 newframe.setVisible(true);
@@ -439,6 +467,7 @@ public class Vista extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

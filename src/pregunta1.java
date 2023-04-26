@@ -38,7 +38,7 @@ public class pregunta1 extends javax.swing.JFrame {
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
-        jTextArea1.setText("Tengo más de 3 lados y menos de 5. Tengo todos mis \nlados iguales. ¿Quién soy?\na) el cuadrado\nb)el triangulo\nc) el circulo");
+        jTextArea1.setText("Tengo más de 3 lados y menos de 5. Tengo todos mis \nlados iguales. ¿Quién soy?\na) El cuadrado\nb)El triangulo\nc) El circulo");
         jScrollPane1.setViewportView(jTextArea1);
 
         jButton2.setText("a");
@@ -69,27 +69,26 @@ public class pregunta1 extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButton2)
                         .addGap(18, 18, 18)
                         .addComponent(jButton3)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton4)
-                        .addGap(0, 224, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE))
-                .addContainerGap())
+                        .addComponent(jButton4)))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
                     .addComponent(jButton3)
                     .addComponent(jButton4))
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         pack();
@@ -99,6 +98,15 @@ public class pregunta1 extends javax.swing.JFrame {
         pregunta2 newframe =new pregunta2();
                 newframe.setVisible(true);
                 this.dispose();
+                
+                
+    contadores v2 = new contadores();
+    
+    
+    v2.incrementar2();
+    int puntaje2 = v2.obtenervalor2();
+    
+        System.out.println(puntaje2+"mal");
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -108,8 +116,11 @@ public class pregunta1 extends javax.swing.JFrame {
                 
     contadores v1 = new contadores();
     
-    int puntaje = v1.correcta;
+    
     v1.incrementar();
+    int puntaje = v1.obtenerValor();
+    
+        System.out.println(puntaje+"bien");
                 
                 
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -118,6 +129,15 @@ public class pregunta1 extends javax.swing.JFrame {
         pregunta2 newframe =new pregunta2();
                 newframe.setVisible(true);
                 this.dispose();
+                
+                
+        contadores v2 = new contadores();
+    
+    
+    v2.incrementar2();
+    int puntaje2 = v2.obtenervalor2();
+    
+        System.out.println(puntaje2+"mal");
     }//GEN-LAST:event_jButton4ActionPerformed
 
     

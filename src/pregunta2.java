@@ -38,7 +38,7 @@ public class pregunta2 extends javax.swing.JFrame {
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
-        jTextArea1.setText("Cuatro gatos en un cuarto, cada gato en un rincón, cada gato ve tres gatos, \nadivina cuántos gatos son.\na) 2 gatos\nb) 3 gatos\nc) 4 gatos");
+        jTextArea1.setText("cuatro gatos en un cuarto,cada gato en un ricon,\ncada gato ve tres gatos, adivina cuantos gatos son.\na) 2 gatos\nb) 3 gatos\nc) 4 gatos");
         jScrollPane1.setViewportView(jTextArea1);
 
         jButton1.setText("a");
@@ -69,26 +69,27 @@ public class pregunta2 extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3)))
-                .addContainerGap(26, Short.MAX_VALUE))
+                        .addComponent(jButton3)
+                        .addGap(0, 236, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2)
                     .addComponent(jButton3))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         pack();
@@ -98,18 +99,49 @@ public class pregunta2 extends javax.swing.JFrame {
        pregunta3 newframe =new pregunta3();
                 newframe.setVisible(true);
                 this.dispose();
+                
+     contadores v2 = new contadores();
+    
+    
+    v2.incrementar2();
+    int puntaje2 = v2.obtenervalor2();
+    
+        System.out.println(puntaje2+"mal");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         pregunta3 newframe =new pregunta3();
                 newframe.setVisible(true);
                 this.dispose();
+            
+                
+       contadores v2 = new contadores();
+    
+    
+    v2.incrementar2();
+    int puntaje2 = v2.obtenervalor2();
+    
+        System.out.println(puntaje2+"mal");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         pregunta3 newframe =new pregunta3();
                 newframe.setVisible(true);
                 this.dispose();
+                 
+                 contadores v1 = new contadores();
+    
+    
+    v1.incrementar();
+    int puntaje = v1.obtenerValor();
+    
+        System.out.println(puntaje +"bien");
+                
+    
+    
+                
+        
+        
                 
     }//GEN-LAST:event_jButton3ActionPerformed
 
