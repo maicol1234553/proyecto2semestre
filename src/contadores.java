@@ -17,7 +17,7 @@ public class contadores {
         return contador2;
     }
 }
-
+//variables staticas
 
 
 
