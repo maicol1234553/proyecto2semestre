@@ -120,7 +120,7 @@ public class pregunta1 extends javax.swing.JFrame {
     v1.incrementar();
     int puntaje = v1.obtenerValor();
     
-        System.out.println(puntaje+"bien");
+        System.out.println(puntaje);
                 
                 
     }//GEN-LAST:event_jButton2ActionPerformed

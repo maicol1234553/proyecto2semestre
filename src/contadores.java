@@ -1,4 +1,5 @@
 public class contadores {
+    //gane
     public static int contadores = 0;
 
     public void incrementar() {
@@ -9,6 +10,7 @@ public class contadores {
     public int obtenerValor() {
         return contadores;
     }
+    //pierda
     public static int contador2=0;
     public void incrementar2(){
         contador2++;
